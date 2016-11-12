@@ -1,5 +1,7 @@
 package io.callstack.react.opentok;
 
+import android.util.Log;
+
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.ThemedReactContext;
@@ -92,6 +94,22 @@ public class PublisherView extends SessionView implements PublisherKit.Publisher
         payload.putString("connectionId", connection.getConnectionId());
 
         sendEvent(Events.EVENT_CLIENT_DISCONNECTED, payload);
+    }
+
+    @Override
+    public void disableVideo(Boolean disableVideo) {
+        mDisableVideo = disableVideo;
+        if(mPublisher != null) {
+            mPublisher.setPublishVideo(disableVideo);
+        }
+    }
+
+    @Override
+    public void disableAudio(Boolean disableAudio) {
+        mDisableAudio = disableAudio;
+        if(mPublisher != null) {
+            mPublisher.setPublishAudio(disableAudio);
+        }
     }
 
 }

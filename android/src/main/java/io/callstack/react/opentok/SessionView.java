@@ -16,6 +16,8 @@ abstract public class SessionView extends FrameLayout implements Session.Session
     protected String mSessionId;
     protected String mToken;
     protected Session mSession;
+    protected Boolean mDisableVideo;
+    protected Boolean mDisableAudio;
 
     public SessionView(ThemedReactContext context) {
         super(context);
@@ -32,6 +34,9 @@ abstract public class SessionView extends FrameLayout implements Session.Session
     public void setToken(String token) {
         mToken = token;
     }
+
+    public void disableVideo(Boolean disableVideo) {mDisableVideo = disableVideo;}
+    public void disableAudio(Boolean disableAudio) {mDisableAudio = disableAudio;}
 
     @Override
     public void onAttachedToWindow() {

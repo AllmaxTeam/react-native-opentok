@@ -24,6 +24,16 @@ abstract class SessionViewManager<T extends SessionView> extends SimpleViewManag
         view.setToken(token);
     }
 
+    @ReactProp(name = "disableVideo")
+    public void disableVideo(T view, Boolean disableVideo) {
+        view.disableVideo(disableVideo);
+    }
+
+    @ReactProp(name = "disableAudio")
+    public void disableAudio(T view, Boolean disableAudio) {
+        view.disableAudio(disableAudio);
+    }
+
     @Override
     @Nullable
     public Map getExportedCustomDirectEventTypeConstants() {

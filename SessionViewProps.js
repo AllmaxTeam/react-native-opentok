@@ -21,4 +21,8 @@ export default {
    * OpenTok API Key to be used
    */
   apiKey: React.PropTypes.string.isRequired,
+
+  disableVideo: React.PropTypes.bool,
+
+  disableAudio: React.PropTypes.bool
 };
