@@ -74,10 +74,14 @@ spinnerContainerStyle | object || number
 onPublishStart | function
 onPublishError | function
 onPublishStop | function
------------- | -------------
+------------ | ------------
 onSubscribeStart | function
 onSubscribeError | function
 onSubscribeStop | function
+disableAudio | bool
+disableVideo | bool
+stopStream | bool
+stopSubscribe | bool
 
 ### Basic usage
 
