@@ -34,6 +34,12 @@ abstract class SessionViewManager<T extends SessionView> extends SimpleViewManag
         view.disableAudio(disableAudio);
     }
 
+    @ReactProp(name = "stopStream")
+    public void stopStream(T view, Boolean stopStream) {view.stopStream(stopStream);}
+
+    @ReactProp(name = "stopSubscribe")
+    public void stopSubscribe(T view, Boolean stopSubscribe) {view.stopSubscribe(stopSubscribe);}
+
     @Override
     @Nullable
     public Map getExportedCustomDirectEventTypeConstants() {

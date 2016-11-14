@@ -24,5 +24,8 @@ export default {
 
   disableVideo: React.PropTypes.bool,
 
-  disableAudio: React.PropTypes.bool
+  disableAudio: React.PropTypes.bool,
+
+  stopStream: React.PropTypes.bool,
+  stopSubscribe: React.PropTypes.bool
 };

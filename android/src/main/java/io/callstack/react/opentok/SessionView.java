@@ -1,9 +1,11 @@
 package io.callstack.react.opentok;
 
+import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
@@ -18,6 +20,8 @@ abstract public class SessionView extends FrameLayout implements Session.Session
     protected Session mSession;
     protected Boolean mDisableVideo;
     protected Boolean mDisableAudio;
+    protected Boolean mStopStream;
+    protected Boolean mStopSubscribe;
 
     public SessionView(ThemedReactContext context) {
         super(context);
@@ -37,6 +41,8 @@ abstract public class SessionView extends FrameLayout implements Session.Session
 
     public void disableVideo(Boolean disableVideo) {mDisableVideo = disableVideo;}
     public void disableAudio(Boolean disableAudio) {mDisableAudio = disableAudio;}
+    public void stopStream(Boolean stopStream) {mDisableAudio = stopStream;}
+    public void stopSubscribe(Boolean stopSubscribe) {mStopSubscribe = stopSubscribe;}
 
     @Override
     public void onAttachedToWindow() {

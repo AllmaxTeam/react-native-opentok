@@ -112,4 +112,12 @@ public class PublisherView extends SessionView implements PublisherKit.Publisher
         }
     }
 
+    @Override
+    public void stopStream(Boolean stopStream) {
+        mStopStream = stopStream;
+        if(stopStream) {
+            mSession.unpublish(mPublisher);
+        }
+    }
+
 }

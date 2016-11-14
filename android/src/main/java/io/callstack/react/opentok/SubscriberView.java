@@ -84,4 +84,12 @@ public class SubscriberView extends SessionView implements SubscriberKit.Subscri
 
         sendEvent(Events.EVENT_CLIENT_DISCONNECTED, payload);
     }
+
+    @Override
+    public void stopSubscribe(Boolean stopSubscribe) {
+        mStopSubscribe = stopSubscribe;
+        if(stopSubscribe) {
+            mSession.unsubscribe(mSubscriber);
+        }
+    }
 }
