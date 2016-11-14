@@ -48,6 +48,19 @@ import io.callstack.react.opentok.MainPackage;
     }
 ```
 
+- In your `android/build.gradle` add:
+```groovy
+allprojects {
+    repositories {
+        ...
+        // Required by OpenTok
+        maven {
+            url "http://tokbox.bintray.com/maven"
+        }
+    }
+}
+```
+
 ### Props
 
 Prop | Type  
